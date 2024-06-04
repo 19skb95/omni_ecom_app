@@ -1,12 +1,29 @@
 import logo from './logo.svg';
 import './App.css';
-import {Card} from 'antd'
+import { Card, ConfigProvider } from 'antd'
+import MainLayout from './component/common/mainLayout';
 
 function App() {
   return (
-    <div className="App">
-     
-    </div>
+    <ConfigProvider
+      theme={{
+        token: {
+          fontFamily: "ABCWhyte, Sans-serif",
+          borderRadius: 2,
+          colorText: "#212529",
+          colorLink: "#47a477",
+          colorLinkHover: "#47a477b0",
+          fontSize: 12
+        },
+        components: {
+          Layout: {
+            headerBg: "#1d1e23",
+          }
+        }
+      }}>
+      <MainLayout />
+    </ConfigProvider>
+
   );
 }
 
